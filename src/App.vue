@@ -1,10 +1,11 @@
+<!-- src/App.vue -->
 <template>
   <v-app>
     <v-app-bar app>
-      <v-toolbar-title>Task Management</v-toolbar-title>
+      <v-toolbar-title>Task and User Management</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn to="/users" text>Users</v-btn>
-      <v-btn to="/tasks" text>Tasks</v-btn>
+      <v-btn @click="$router.push('/users')">Users</v-btn>
+      <v-btn @click="$router.push('/tasks')">Tasks</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -12,17 +13,15 @@
     </v-main>
 
     <v-footer app>
-      <v-col class="text-center">&copy; 2024 Task Management System</v-col>
+      <v-col class="text-center">
+        © 2024 Your Company
+      </v-col>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
-
-<style>
-/* You can add global styles here */
-</style>
