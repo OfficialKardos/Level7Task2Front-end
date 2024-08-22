@@ -1,7 +1,7 @@
 <template>
     <v-container>
       <v-btn @click="$router.push('/tasks/create')" color="secondary">Create Task</v-btn>
-      <v-data-table :headers="headers" :items="tasks">
+      <v-data-table :headers="headers.text" :items="tasks">
         <template v-slot:item.actions="{ item }">
           <v-btn @click="$router.push(`/tasks/${item.id}/edit`)" color="blue">Edit</v-btn>
           <v-btn @click="confirmDeleteTask(item.id)" color="red">Delete</v-btn>
