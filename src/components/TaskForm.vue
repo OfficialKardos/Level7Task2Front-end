@@ -3,14 +3,9 @@
       <v-form @submit.prevent="submitForm">
         <v-text-field v-model="task.task_name" label="Task Name" required></v-text-field>
         <v-textarea v-model="task.description" label="Description" required></v-textarea>
-        <v-menu v-model="menu" :close-on-content-click="false">
-          <template #activator="{ on, attrs }">
-            <v-text-field v-model="task.schedule_date" label="Schedule Date" readonly v-bind="attrs" v-on="on"></v-text-field>
-          </template>
-          <v-date-picker v-model="task.schedule_date" @input="menu = false"></v-date-picker>
-        </v-menu>
+        <v-text-field v-model="task.schedule_date" label="Schedule Date" type="date" required />
         <v-select v-model="task.priority" :items="priorities" label="Priority" required></v-select>
-        <v-select v-model="task.assigned_to" :items="users" item-value="id" item-text="name" label="Assigned To" required></v-select>
+        <v-select v-model="task.assigned_to" :items="users" item-value="id" item-title=".name" label="Assigned To" required></v-select>
         <v-btn type="submit">Save</v-btn>
       </v-form>
     </v-container>
